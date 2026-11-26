@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova — The ultimate everyday go-to</title>
+
+  <!-- Crisp Inline Geometric SVG Favicon (no external .png image files) -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230F172A'/%3E%3Cpath d='M16 48L26.5 16H33L42 35.5L47.5 16H53L43 48H36.5L27.5 28.5L22 48H16Z' fill='%23FFFFFF'/%3E%3Cpath d='M44 21L52 16.5L45.5 32.5L41 29.5L44 21Z' fill='%232563EB'/%3E%3C/svg%3E"
+  />
+
+  <!-- Typography: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink: {
+              900: '#0F172A',
+              700: '#334155',
+              500: '#475569',
+            },
+            surface: {
+              white: '#FFFFFF',
+              soft: '#F8FAFC',
+              line: '#E2E8F0',
+            },
+            accent: {
+              600: '#2563EB',
+              700: '#1D4ED8',
+            }
+          },
+          boxShadow: {
+            'card': '0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.04)',
+            'panel': '0 10px 25px -8px rgba(15, 23, 42, 0.08), 0 4px 10px -4px rgba(15, 23, 42, 0.04)',
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Crisp white surface and high-contrast ink baseline */
+    body {
+      background-color: #FFFFFF;
+      color: #0F172A;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .bg-dot-grid {
+      background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .header-glass {
+      background-color: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="font-sans bg-white text-ink-900 selection:bg-accent-600 selection:text-white">
+
+  <!-- 1. Top Navigation Bar -->
+  <header class="sticky top-0 z-50 header-glass border-b border-surface-line">
+    <nav aria-label="Primary Navigation" class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <!-- Brand Logo & Name ("Nova" with crisp inline geometric SVG mark) -->
+      <a href="#" class="inline-flex items-center gap-2.5 group focus:outline-none">
+        <span class="w-9 h-9 rounded-xl bg-surface-soft border border-surface-line flex items-center justify-center group-hover:border-ink-900/30 transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 39L17.5 10H23L30.5 26.5L36 10H40.5L31.5 39H26L18.5 22.5L13 39H8Z" fill="#0F172A"/>
+            <path d="M33.5 15.5L40.5 11.5L34.8 25.5L31 22.8L33.5 15.5Z" fill="#2563EB"/>
+          </svg>
+        </span>
+        <span class="text-lg font-extrabold tracking-tight text-ink-900">Nova</span>
+      </a>
+
+      <!-- Navigation Links: ONLY "Products" and "Desktop Apps" -->
+      <div class="flex items-center gap-6 sm:gap-8 text-sm font-medium text-ink-700">
+        <a href="#products" class="hover:text-ink-900 transition-colors">Products</a>
+        <a href="#desktop-apps" class="hover:text-ink-900 transition-colors">Desktop Apps</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 2. Hero Section -->
+    <section class="relative py-20 sm:py-28 px-4 sm:px-6 border-b border-surface-line overflow-hidden">
+      <div aria-hidden="true" class="absolute inset-0 bg-dot-grid opacity-45 pointer-events-none"></div>
+      <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+
+      <div class="relative max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-soft border border-surface-line text-xs font-medium text-ink-700 mb-6">
+          <span class="w-2 h-2 rounded-full bg-accent-600"></span>
+          <span>Lightweight &bull; Private &bull; Secure &amp; Encrypted &bull; Built in India</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink-900 leading-[1.08]">
+          The ultimate everyday go-to
+        </h1>
+
+        <p class="mt-5 text-base sm:text-xl text-ink-500 max-w-2xl mx-auto leading-relaxed">
+          Lightweight, private, secure, and encrypted apps built in India—unified software and mail designed for native speed.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href="#products" class="px-5 py-3 rounded-xl text-sm font-semibold text-white bg-ink-900 hover:bg-accent-600 transition-colors">
+            View Products
+          </a>
+          <a href="#desktop-apps" class="px-5 py-3 rounded-xl text-sm font-semibold text-ink-900 bg-white hover:bg-surface-soft border border-surface-line transition-colors">
+            Explore Desktop Apps
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Products Section (#products) -->
+    <section id="products" class="py-20 sm:py-24 px-4 sm:px-6 bg-surface-soft border-b border-surface-line">
+      <div class="max-w-5xl mx-auto">
+        <div class="max-w-2xl mb-10">
+          <p class="font-mono text-xs font-semibold uppercase tracking-wider text-accent-600 mb-2">
+            Products
+          </p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink-900">
+            Build status &amp; roadmap window
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-ink-500 leading-relaxed">
+            Lightweight, private, secure, and encrypted software built in India for everyday speed.
+          </p>
+        </div>
+
+        <!-- Progress Window Card -->
+        <div class="rounded-2xl bg-white border border-surface-line shadow-panel overflow-hidden">
+          <!-- Window Top Bar -->
+          <div class="px-5 py-3.5 bg-surface-soft border-b border-surface-line flex items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+              <span class="ml-2 font-mono text-xs font-semibold text-ink-700">nova-progress-window</span>
+            </div>
+            <span class="font-mono text-[11px] font-medium text-ink-500">
+              Private &bull; Secure &bull; Encrypted
+            </span>
+          </div>
+
+          <!-- Progress Items List -->
+          <div class="divide-y divide-surface-line">
+            <!-- Item 1: NovaMail — In Progress -->
+            <div class="p-5 sm:px-7 sm:py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-surface-soft/60 transition-colors">
+              <div>
+                <div class="flex items-center gap-3">
+                  <h3 class="text-lg sm:text-xl font-bold text-ink-900">NovaMail</h3>
+                </div>
+                <p class="text-sm text-ink-500 mt-1">
+                  Lightweight, private, secure, and encrypted mail built in India for fast daily communication.
+                </p>
+              </div>
+              <span class="inline-flex items-center gap-2 self-start sm:self-center shrink-0 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 font-mono text-xs font-semibold text-accent-600">
+                <span class="w-2 h-2 rounded-full bg-accent-600"></span>
+                In Progress
+              </span>
+            </div>
+
+            <!-- Item 2: NoveDrive — Coming Soon -->
+            <div class="p-5 sm:px-7 sm:py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-surface-soft/60 transition-colors">
+              <div>
+                <div class="flex items-center gap-3">
+                  <h3 class="text-lg sm:text-xl font-bold text-ink-900">NoveDrive</h3>
+                </div>
+                <p class="text-sm text-ink-500 mt-1">
+                  Lightweight, private, secure, and encrypted storage built in India for seamless everyday files.
+                </p>
+              </div>
+              <span class="inline-flex items-center gap-2 self-start sm:self-center shrink-0 px-3.5 py-1.5 rounded-full bg-surface-soft border border-surface-line font-mono text-xs font-semibold text-ink-700">
+                <span class="w-2 h-2 rounded-full bg-slate-400"></span>
+                Coming Soon
+              </span>
+            </div>
+
+            <!-- Item 3: Neon AI — Coming Soon -->
+            <div class="p-5 sm:px-7 sm:py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-surface-soft/60 transition-colors">
+              <div>
+                <div class="flex items-center gap-3">
+                  <h3 class="text-lg sm:text-xl font-bold text-ink-900">Neon AI</h3>
+                </div>
+                <p class="text-sm text-ink-500 mt-1">
+                  Lightweight, private, secure, and encrypted intelligence built in India for everyday workflows.
+                </p>
+              </div>
+              <span class="inline-flex items-center gap-2 self-start sm:self-center shrink-0 px-3.5 py-1.5 rounded-full bg-surface-soft border border-surface-line font-mono text-xs font-semibold text-ink-700">
+                <span class="w-2 h-2 rounded-full bg-slate-400"></span>
+                Coming Soon
+              </span>
+            </div>
+          </div>
+
+          <!-- Assurance Strip Inside Progress Window -->
+          <div class="px-5 sm:px-7 py-4 bg-surface-soft border-t border-surface-line flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-ink-700">
+            <span class="font-medium">
+              Everything is private, secure, and encrypted.
+            </span>
+            <span class="font-mono text-ink-500">
+              Lightweight &bull; Built in India
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Desktop Apps Section (#desktop-apps) -->
+    <section id="desktop-apps" class="py-20 sm:py-24 px-4 sm:px-6 bg-white border-b border-surface-line">
+      <div class="max-w-5xl mx-auto">
+        <div class="max-w-2xl mb-10">
+          <p class="font-mono text-xs font-semibold uppercase tracking-wider text-accent-600 mb-2">
+            Desktop Apps
+          </p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink-900">
+            Built for Windows, macOS, Linux, and MintBug OS.
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-ink-500 leading-relaxed">
+            Every Nova desktop app is lightweight, private, secure, and encrypted—crafted by Nova, based in India.
+          </p>
+        </div>
+
+        <!-- 4 Supported Desktop Platforms -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <article class="rounded-2xl bg-white border border-surface-line shadow-card p-6 flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs font-semibold text-accent-600">DESKTOP</span>
+              <h3 class="text-lg font-bold text-ink-900 mt-1.5">Windows</h3>
+              <p class="text-sm text-ink-500 mt-2 leading-relaxed">
+                Lightweight desktop app with private, secure, and encrypted handling.
+              </p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-surface-line font-mono text-xs text-ink-700">
+              Lightweight &bull; Encrypted
+            </div>
+          </article>
+
+          <article class="rounded-2xl bg-white border border-surface-line shadow-card p-6 flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs font-semibold text-accent-600">DESKTOP</span>
+              <h3 class="text-lg font-bold text-ink-900 mt-1.5">macOS</h3>
+              <p class="text-sm text-ink-500 mt-2 leading-relaxed">
+                Fast, lightweight macOS experience built around privacy, security, and encryption.
+              </p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-surface-line font-mono text-xs text-ink-700">
+              Lightweight &bull; Encrypted
+            </div>
+          </article>
+
+          <article class="rounded-2xl bg-white border border-surface-line shadow-card p-6 flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs font-semibold text-accent-600">DESKTOP</span>
+              <h3 class="text-lg font-bold text-ink-900 mt-1.5">Linux</h3>
+              <p class="text-sm text-ink-500 mt-2 leading-relaxed">
+                Clean, lightweight Linux desktop app keeping your data private, secure, and encrypted.
+              </p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-surface-line font-mono text-xs text-ink-700">
+              Lightweight &bull; Encrypted
+            </div>
+          </article>
+
+          <article class="rounded-2xl bg-white border border-surface-line shadow-card p-6 flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs font-semibold text-accent-600">DESKTOP</span>
+              <h3 class="text-lg font-bold text-ink-900 mt-1.5">MintBug OS</h3>
+              <p class="text-sm text-ink-500 mt-2 leading-relaxed">
+                First-class lightweight support for MintBug OS with private, secure, and encrypted workflows.
+              </p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-surface-line font-mono text-xs text-ink-700">
+              Lightweight &bull; Encrypted
+            </div>
+          </article>
+        </div>
+
+        <!-- India & Privacy Callout Bar -->
+        <div class="mt-6 rounded-2xl bg-surface-soft border border-surface-line px-5 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-sm text-ink-700">
+          <div>
+            <span class="font-semibold text-ink-900">Nova is based in India.</span>
+            <span class="text-ink-500">All apps are lightweight, private, secure, and encrypted.</span>
+          </div>
+          <span class="font-mono text-xs font-semibold text-ink-900 shrink-0">
+            Based in India
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. Extreme Bottom Footer -->
+  <footer class="bg-surface-soft border-t border-surface-line py-8 px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto flex flex-col gap-3 text-xs sm:text-sm text-ink-500">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div class="flex flex-wrap items-center gap-2">
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 39L17.5 10H23L30.5 26.5L36 10H40.5L31.5 39H26L18.5 22.5L13 39H8Z" fill="#0F172A"/>
+            <path d="M33.5 15.5L40.5 11.5L34.8 25.5L31 22.8L33.5 15.5Z" fill="#2563EB"/>
+          </svg>
+          <span class="font-bold text-ink-900">&copy; Nova 2026</span>
+          <span>&bull;</span>
+          <span>Based in India</span>
+        </div>
+
+        <div class="font-medium text-ink-700">
+          Website Built And Hosted By Nova Ltd.
+        </div>
+      </div>
+
+      <div class="pt-2 border-t border-surface-line/80 text-xs font-medium text-ink-700">
+        In Collaboration With MintBug OS And Gentix Science
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
